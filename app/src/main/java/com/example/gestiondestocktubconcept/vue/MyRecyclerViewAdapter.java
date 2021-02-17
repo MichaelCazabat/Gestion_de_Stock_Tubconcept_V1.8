@@ -62,12 +62,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         //holder.myTextView.setText(animal);
 
 
-            holder.txt_categorie.setText(liste_produits.get(position).getCategorie());
-            holder.txt_reference.setText(liste_produits.get(position).getReference());
-            holder.txt_nom.setText(liste_produits.get(position).getNom());
-            holder.txt_prix.setText(liste_produits.get(position).getPrixUnite().toString());
-            holder.txt_quantite.setText(liste_produits.get(position).getQuantite().toString());
-            holder.txt_description.setText(liste_produits.get(position).getDescription());
+        holder.txt_categorie.setText(liste_produits.get(position).getCategorie());
+        holder.txt_reference.setText(liste_produits.get(position).getReference());
+        holder.txt_nom.setText(liste_produits.get(position).getNom());
+        holder.txt_prix.setText(liste_produits.get(position).getPrixUnite().toString());
+        holder.txt_quantite.setText(liste_produits.get(position).getQuantite().toString());
+        holder.txt_description.setText(liste_produits.get(position).getDescription());
 
     }
 
