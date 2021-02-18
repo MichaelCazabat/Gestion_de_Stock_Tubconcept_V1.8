@@ -259,12 +259,15 @@ public class liste_produits extends AppCompatActivity implements MyRecyclerViewA
 
 
         String s = "ALEEEEEEEEED";
-        String url = "http://localhost/Test_Json/TEST.php";
+        String url = "https://www.stage1.lefortderomorantin.fr/test.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
+
+
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(liste_produits.this,response.trim(),Toast.LENGTH_LONG).show();
+                        Log.i("message",response.trim());
 
                     }
                 },
@@ -272,20 +275,51 @@ public class liste_produits extends AppCompatActivity implements MyRecyclerViewA
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(liste_produits.this,error.toString(),Toast.LENGTH_LONG).show();
+                        Log.i("message", error.toString());
                     }
-                }){
+                }) {
+
+
             @Override
             protected Map<String, String> getParams() {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("data",s);
+                liste_produits.toString();
+                Map<String, String> params = null;
+                params = new HashMap<String, String>();
 
-                return params;
-            }
+                    //String exp_categorie = liste_produits.get(p).getCategorie();
+                    String exp_categorie =String.valueOf(spinner.getSelectedItemPosition());
+                    String exp_nom = liste_produits.get(0).getNom();
+                    String exp_reference = liste_produits.get(0).getReference();
+                    String exp_prix = liste_produits.get(0).getPrixUnite().toString();
+                    String exp_quantite = liste_produits.get(0).getQuantite().toString();
+                    String exp_description = liste_produits.get(0).getDescription();
+
+
+
+                    //TODO rajouter l'index de la catégorie
+                    //params.put("categorie", exp_categorie);
+                    params.put("reference", exp_reference);
+                    params.put("nom", exp_nom);
+                    params.put("prix", exp_prix);
+                    params.put("quantite", exp_quantite);
+                    params.put("description", exp_description);
+
+
+
+                    return params;
+
+                }
+
         };
+
         RequestQueue requestQueue = Volley.newRequestQueue(liste_produits.this);
         requestQueue.add(stringRequest);
 
+        liste_produits.remove(0);
+        adapter.notifyItemRemoved(0);
+
     }
+
 
 }
 
