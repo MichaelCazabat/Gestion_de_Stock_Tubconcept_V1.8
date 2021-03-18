@@ -151,7 +151,7 @@ public class Connexion_admin extends AppCompatActivity{
                     // affectation des champs dans le php au variables
                     id_utilisateur = jsonObject1.getString("id");
                     mail = jsonObject1.getString("mail");
-                    motdepasse = jsonObject1.getString("mdp");
+                    motdepasse = jsonObject1.getString("motdepasse");
 
 
                     // hashmap
