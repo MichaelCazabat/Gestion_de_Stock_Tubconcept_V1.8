@@ -43,7 +43,7 @@ public class Page_login_commercant extends AppCompatActivity {
 
         public static final String MyPREFERENCES = "MyPrefs" ;
         // url de la page sur laquelle s'affiche le php
-        private static String JSON_URL = "https://run.mocky.io/v3/9fd0eec4-4fb9-4e40-8f0d-df483cc75860";
+        private static String JSON_URL = "http://aico2742.alwaysdata.net/PDO_requete_Json_utilisateurs.php";
 
         ArrayList<HashMap<String, String>> mots_de_passe_liste;
         ArrayList<HashMap<String, String>> produitsliste;
@@ -156,7 +156,7 @@ public class Page_login_commercant extends AppCompatActivity {
                                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                                         // affectation des champs dans le php au variables
-                                        id_utilisateur = jsonObject1.getString("id_utilisateur");
+                                        id_utilisateur = jsonObject1.getString("id");
                                         pseudo = jsonObject1.getString("pseudo");
                                         mail = jsonObject1.getString("mail");
                                         motdepasse = jsonObject1.getString("motdepasse");

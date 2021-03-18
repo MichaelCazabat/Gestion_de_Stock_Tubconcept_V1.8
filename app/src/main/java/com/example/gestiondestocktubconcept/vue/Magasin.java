@@ -29,7 +29,7 @@ public class Magasin extends AppCompatActivity {
     //definition des varaible qui apparaissent dans le php
     String id_magasin, nom_magasin, siret, telephone, adresse, codepostale;
     // url de la page sur laquelle s'affiche le php
-    private static String JSON_URL = "https://run.mocky.io/v3/49f43b01-7a95-44e2-9aaf-67bcd1194a7b";
+    private static String JSON_URL = "http://aico2742.alwaysdata.net/PDO_requete_Json_magasin.php";
 
     ArrayList<HashMap<String, String>> liste_magasin;
 
@@ -103,7 +103,7 @@ public class Magasin extends AppCompatActivity {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                     // affectation des champs dans le php au variables
-                    id_magasin = jsonObject1.getString("id_magasin");
+                    id_magasin = jsonObject1.getString("id");
                     nom_magasin = jsonObject1.getString("nom_magasin");
                     siret =jsonObject1.getString("siret");
                     telephone =jsonObject1.getString("telephone");

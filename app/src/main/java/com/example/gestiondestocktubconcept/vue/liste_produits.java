@@ -49,7 +49,7 @@ public class liste_produits extends AppCompatActivity implements MyRecyclerViewA
 
 
     Spinner spinner;
-    String URL = "https://run.mocky.io/v3/88daf293-af6f-44cc-949f-2d2278d47ff6";
+    String URL = "http://aico2742.alwaysdata.net/PDO_requete_Json_categorie.php";
     ArrayList<String> liste_categorie;
     String categorie;
 

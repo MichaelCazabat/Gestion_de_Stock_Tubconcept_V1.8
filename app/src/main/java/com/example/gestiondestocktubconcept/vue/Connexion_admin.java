@@ -34,7 +34,7 @@ public class Connexion_admin extends AppCompatActivity{
 
 
     // url de la page sur laquelle s'affiche le php
-    private static String JSON_URL = "https://run.mocky.io/v3/7b7945ed-3944-415c-a769-af4f801efce6";
+    private static String JSON_URL = "http://aico2742.alwaysdata.net/PDO_requete_Json_admin.php";
 
     ArrayList<HashMap<String, String>> mots_de_passe_liste;
     ArrayList<HashMap<String, String>> produitsliste;
@@ -150,7 +150,6 @@ public class Connexion_admin extends AppCompatActivity{
 
                     // affectation des champs dans le php au variables
                     id_utilisateur = jsonObject1.getString("id");
-
                     mail = jsonObject1.getString("mail");
                     motdepasse = jsonObject1.getString("mdp");
 
@@ -158,7 +157,7 @@ public class Connexion_admin extends AppCompatActivity{
                     // hashmap
                     HashMap<String, String> utilisateurs = new HashMap<>();
 
-                    utilisateurs.put("id_utilisateur", id_utilisateur);
+                    utilisateurs.put("id", id_utilisateur);
                     utilisateurs.put("mail", mail);
                     utilisateurs.put("motdepasse", motdepasse);
 
